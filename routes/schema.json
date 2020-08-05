@@ -1,0 +1,24 @@
+{
+    "schemaPostTodo":{
+        "schema":{
+            "query":{
+                "type": "object",
+                "properties": {
+                    "id": { "type": "number" },
+                    "tododata": { "type": "string" }
+                }
+            }     
+        }
+    },
+    "schemaGetTodo":{
+        "schema":{
+            "query":{
+                "type": "object",
+                "properties": {
+                    "id": { "type": "number" },
+                    "tododata": { "type": "string" }
+                }
+            }     
+        }
+    }
+}
