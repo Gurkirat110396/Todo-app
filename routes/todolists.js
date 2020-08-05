@@ -3,7 +3,7 @@ async function routes(fastify, options){
 
     fastify.get('/', schemaGetTodo , async (req,res) => {
         let connection = await fastify.mysql.getConnection()
-        connection.query('SELECT * FROM todo', function(err,result) {
+        connection.query('SELECT * FROM todotable', function(err,result) {
             if(err){
                 res.send(err)
             }else{
@@ -14,12 +14,12 @@ async function routes(fastify, options){
 
     fastify.post('/', schemaPostTodo ,async (req,res) => {
         const T1 = {
-            id : req.body.id,
-            tododata : req.body.tododata
+            tododata : req.body.tododata,
+            priority : req.body.priority
         }
         JSON.stringify(T1);
         let connection = await fastify.mysql.getConnection()
-        connection.query('INSERT INTO todo SET ?', T1 ,
+        connection.query('INSERT INTO todotable SET ?', T1 ,
             function(err,result){
                 if(err){
                     res.send(err)
