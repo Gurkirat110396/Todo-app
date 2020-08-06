@@ -6,7 +6,7 @@ fastify.register(require('fastify-cors'),{
 
 fastify.register(require('fastify-mysql'), {
     promise:true,
-    connectionString: 'mysql://root:Gurkirat@96@localhost/todolist'
+    connectionString: 'mysql://root@localhost/todolist'
 })
 
 fastify.register(require('./routes/todolists'),{prefix:'/todo'})
